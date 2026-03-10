@@ -162,15 +162,6 @@
 	<div id="tabs-3" aria-labelledby="ui-id-17" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false" style="display: block;">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 </div>
 
-
-
-<h2 class="demoHeaders">Dialog</h2>
-<div id="dialog" title="Basic dialog">
-	<p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
-
-<button id="opener">Open Dialog</button>
-
 <!-- ui-dialog -->
 
 <!-- Slider -->
@@ -262,26 +253,6 @@ $( "#controlgroup" ).controlgroup();
 
 
 $( "#tabs" ).tabs();
-
-
-$( function() {
-		$( "#dialog" ).dialog({
-			autoOpen: false,
-			show: {
-				effect: "blind",
-				duration: 1000
-			},
-			hide: {
-				effect: "explode",
-				duration: 1000
-			}
-		});
-
-		$( "#opener" ).on( "click", function() {
-			$( "#dialog" ).dialog( "open" );
-		});
-	} );
-
 
 $( "#datepicker" ).datepicker({
 	inline: true
