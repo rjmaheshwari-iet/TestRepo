@@ -47,6 +47,126 @@
 		width: 200px;
 	}
 	</style>
+	<script src="./jQueryUI_Sample_files/jquery-4.0.0.min.js"></script>
+	<script src="./jQueryUI_Sample_files/jquery-ui.js"></script>
+<!--
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script> -->
+
+<script>
+
+$( "#accordion" ).accordion();
+
+
+
+var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( "#autocomplete" ).autocomplete({
+	source: availableTags
+});
+
+
+
+$( "#button" ).button();
+$( "#button-icon" ).button({
+	icon: "ui-icon-gear",
+	showLabel: false
+});
+
+
+$( "#controlgroup" ).controlgroup();
+
+
+
+$( "#tabs" ).tabs();
+
+
+
+$( function() {
+		$( "#dialog" ).dialog({
+			autoOpen: false,
+			show: {
+				effect: "blind",
+				duration: 1000
+			},
+			hide: {
+				effect: "explode",
+				duration: 1000
+			}
+		});
+
+		$( "#opener" ).on( "click", function() {
+			$( "#dialog" ).dialog( "open" );
+		});
+	} );
+
+
+$( "#datepicker" ).datepicker({
+	inline: true
+});
+
+
+
+$( "#slider" ).slider({
+	range: true,
+	values: [ 17, 67 ]
+});
+
+
+
+$( "#progressbar" ).progressbar({
+	value: 20
+});
+
+
+
+$( "#spinner" ).spinner();
+
+
+
+$( "#menu" ).menu();
+
+
+
+$( "#tooltip" ).tooltip();
+
+
+
+$( "#speed" ).selectmenu();
+
+
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
 </head>
 <body>
 
@@ -165,11 +285,11 @@
 
 
 <h2 class="demoHeaders">Dialog</h2>
-<p>
-	<button id="dialog-link" class="ui-button ui-corner-all ui-widget">
-		<span class="ui-icon ui-icon-newwin"></span>Open Dialog
-	</button>
-</p>
+<div id="dialog" title="Basic dialog">
+	<p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+
+<button id="opener">Open Dialog</button>
 
 <!-- ui-dialog -->
 
@@ -184,14 +304,16 @@
 <p>Date: <input type="text" id="datepicker"></p>
 
 <h2 class="demoHeaders">Selectmenu</h2>
-<select id="selectmenu" style="display: none;">
-	<option>Slower</option>
-	<option>Slow</option>
-	<option selected="selected">Medium</option>
-	<option>Fast</option>
-	<option>Faster</option>
-</select><span tabindex="0" id="selectmenu-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="selectmenu-menu" aria-haspopup="true" class="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-closed ui-corner-all" aria-activedescendant="ui-id-31" aria-labelledby="ui-id-31" aria-disabled="false"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Medium</span></span>
-
+<fieldset>
+		<label for="speed">Select a speed</label>
+		<select name="speed" id="speed">
+			<option>Slower</option>
+			<option>Slow</option>
+			<option selected="selected">Medium</option>
+			<option>Fast</option>
+			<option>Faster</option>
+		</select>
+</fieldset>
 
 
 <!-- Menu -->
@@ -211,133 +333,5 @@
 	<li class="ui-menu-item"><div id="ui-id-27" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Item 4</div></li>
 	<li class="ui-menu-item"><div id="ui-id-28" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Item 5</div></li>
 </ul>
-
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-	<script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
-<script>
-
-$( "#accordion" ).accordion();
-
-
-
-var availableTags = [
-	"ActionScript",
-	"AppleScript",
-	"Asp",
-	"BASIC",
-	"C",
-	"C++",
-	"Clojure",
-	"COBOL",
-	"ColdFusion",
-	"Erlang",
-	"Fortran",
-	"Groovy",
-	"Haskell",
-	"Java",
-	"JavaScript",
-	"Lisp",
-	"Perl",
-	"PHP",
-	"Python",
-	"Ruby",
-	"Scala",
-	"Scheme"
-];
-$( "#autocomplete" ).autocomplete({
-	source: availableTags
-});
-
-
-
-$( "#button" ).button();
-$( "#button-icon" ).button({
-	icon: "ui-icon-gear",
-	showLabel: false
-});
-
-
-$( "#controlgroup" ).controlgroup();
-
-
-
-$( "#tabs" ).tabs();
-
-
-
-$( "#dialog" ).dialog({
-	autoOpen: false,
-	width: 400,
-	buttons: [
-		{
-			text: "Ok",
-			click: function() {
-				$( this ).dialog( "close" );
-			}
-		},
-		{
-			text: "Cancel",
-			click: function() {
-				$( this ).dialog( "close" );
-			}
-		}
-	]
-});
-
-// Link to open the dialog
-$( "#dialog-link" ).click(function( event ) {
-	$( "#dialog" ).dialog( "open" );
-	event.preventDefault();
-});
-
-
-
-$( "#datepicker" ).datepicker({
-	inline: true
-});
-
-
-
-$( "#slider" ).slider({
-	range: true,
-	values: [ 17, 67 ]
-});
-
-
-
-$( "#progressbar" ).progressbar({
-	value: 20
-});
-
-
-
-$( "#spinner" ).spinner();
-
-
-
-$( "#menu" ).menu();
-
-
-
-$( "#tooltip" ).tooltip();
-
-
-
-$( "#selectmenu" ).selectmenu();
-
-
-// Hover states on the static widgets
-$( "#dialog-link, #icons li" ).hover(
-	function() {
-		$( this ).addClass( "ui-state-hover" );
-	},
-	function() {
-		$( this ).removeClass( "ui-state-hover" );
-	}
-);
-</script><ul id="ui-id-7" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none; width: 168.4px; top: 573.1px; left: 50px;"><li class="ui-menu-item"><div id="ui-id-37" tabindex="-1" class="ui-menu-item-wrapper">Asp</div></li><li class="ui-menu-item"><div id="ui-id-38" tabindex="-1" class="ui-menu-item-wrapper">BASIC</div></li><li class="ui-menu-item"><div id="ui-id-39" tabindex="-1" class="ui-menu-item-wrapper">Haskell</div></li><li class="ui-menu-item"><div id="ui-id-40" tabindex="-1" class="ui-menu-item-wrapper">JavaScript</div></li></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"><div>4 results are available, use up and down arrow keys to navigate.</div></div><div class="ui-selectmenu-menu ui-front" style="top: 983.637px; left: 65.6px;"><ul aria-hidden="true" aria-labelledby="car-type-button" id="car-type-menu" role="listbox" tabindex="0" class="ui-menu ui-corner-bottom ui-widget ui-widget-content" aria-activedescendant="ui-id-8" aria-disabled="false" style="width: 256.4px;"><li class="ui-menu-item"><div id="ui-id-8" tabindex="-1" role="option" class="ui-menu-item-wrapper ui-state-active">Compact car</div></li><li class="ui-menu-item"><div id="ui-id-9" tabindex="-1" role="option" class="ui-menu-item-wrapper">Midsize car</div></li><li class="ui-menu-item"><div id="ui-id-10" tabindex="-1" role="option" class="ui-menu-item-wrapper">Full size car</div></li><li class="ui-menu-item"><div id="ui-id-11" tabindex="-1" role="option" class="ui-menu-item-wrapper">SUV</div></li><li class="ui-menu-item"><div id="ui-id-12" tabindex="-1" role="option" class="ui-menu-item-wrapper">Luxury</div></li><li class="ui-menu-item"><div id="ui-id-13" tabindex="-1" role="option" class="ui-menu-item-wrapper">Truck</div></li><li class="ui-menu-item"><div id="ui-id-14" tabindex="-1" role="option" class="ui-menu-item-wrapper">Van</div></li></ul></div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable" aria-describedby="dialog" aria-labelledby="ui-id-18" style="position: absolute; height: auto; width: 400px; top: 1018.8px; left: 556.5px; display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-18" class="ui-dialog-title">Dialog Title</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div id="dialog" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 20px; max-height: none; height: auto;">
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-corner-all ui-widget">Ok</button><button type="button" class="ui-button ui-corner-all ui-widget">Cancel</button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"><div style="display: none;">That's what this widget is</div><div style="display: none;">That's what this widget is</div><div>That's what this widget is</div></div><div class="ui-selectmenu-menu ui-front" style="top: 2558.89px; left: 50px;"><ul aria-hidden="true" aria-labelledby="selectmenu-button" id="selectmenu-menu" role="listbox" tabindex="0" class="ui-menu ui-corner-bottom ui-widget ui-widget-content" aria-activedescendant="ui-id-31" aria-disabled="false" style="width: 256.4px;"><li class="ui-menu-item"><div id="ui-id-29" tabindex="-1" role="option" class="ui-menu-item-wrapper">Slower</div></li><li class="ui-menu-item"><div id="ui-id-30" tabindex="-1" role="option" class="ui-menu-item-wrapper">Slow</div></li><li class="ui-menu-item"><div id="ui-id-31" tabindex="-1" role="option" class="ui-menu-item-wrapper ui-state-active">Medium</div></li><li class="ui-menu-item"><div id="ui-id-32" tabindex="-1" role="option" class="ui-menu-item-wrapper">Fast</div></li><li class="ui-menu-item"><div id="ui-id-33" tabindex="-1" role="option" class="ui-menu-item-wrapper">Faster</div></li></ul></div>
-
 
 </body></html>
