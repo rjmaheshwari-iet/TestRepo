@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)# -->
+<html lang="us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>jQuery UI Example Page</title>
+	<link href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css" rel="stylesheet">
+	<style>
+	body{
+		font-family: "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	select {
+		width: 200px;
+	}
+	.ui-menu { width: 150px; }
+	</style>
+</head>
+<body>
+
+<h1>Welcome to jQuery UI!</h1>
+
+<div class="ui-widget">
+	<p>This page demonstrates the widgets and theme you selected in Download Builder. Please make sure you are using them with a compatible jQuery version.</p>
+</div>
+
+<h1>YOUR COMPONENTS:</h1>
+
+
+<!-- Accordion -->
+<h2 class="demoHeaders">Accordion</h2>
+<div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+	<h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-collapsed ui-corner-all" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>First</h3>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="true" style="display: none; height: 21.2px;">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+	<h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-active ui-state-active" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>Second</h3>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="false" style="display: block; height: 21.2px;">Phasellus mattis tincidunt nibh.</div>
+	<h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-5" aria-controls="ui-id-6" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Third</h3>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-6" aria-labelledby="ui-id-5" role="tabpanel" aria-hidden="true" style="display: none; height: 21.2px;">Nam dui erat, auctor a, dignissim quis.</div>
+</div>
+
+
+
+<!-- Autocomplete -->
+<h2 class="demoHeaders">Autocomplete</h2>
+<div>
+	<input id="autocomplete" title="type &quot;a&quot;" class="ui-autocomplete-input" autocomplete="off">
+</div>
+
+
+
+<!-- Button -->
+<h1 class="demoHeaders">Button</h1>
+<div class="widget">
+	<h2>Widget Buttons</h2>
+	<fieldset>
+		<button>A button element</button>
+
+		<input type="submit" value="A submit button">
+	</fieldset>
+	<h2>CSS Buttons</h2>
+	<fieldset>
+		<button class="ui-button ui-widget ui-corner-all">A button element</button>
+
+		<input class="ui-button ui-widget ui-corner-all" type="submit" value="A submit button">
+	</fieldset>
+</div>
+
+<div class="widget">
+	<h1>Checkbox and radio button widgets</h1>
+
+	<h2>Radio Group</h2>
+	<fieldset>
+		<legend>Select a Location: </legend>
+		<label for="radio-1">New York</label>
+		<input type="radio" name="radio-1" id="radio-1">
+		<label for="radio-2">Paris</label>
+		<input type="radio" name="radio-1" id="radio-2">
+		<label for="radio-3">London</label>
+		<input type="radio" name="radio-1" id="radio-3">
+	</fieldset>
+
+	<h2>Checkbox</h2>
+	<fieldset>
+		<legend>Hotel Ratings: </legend>
+		<label for="checkbox-1">2 Star</label>
+		<input type="checkbox" name="checkbox-1" id="checkbox-1">
+		<label for="checkbox-2">3 Star</label>
+		<input type="checkbox" name="checkbox-2" id="checkbox-2">
+		<label for="checkbox-3">4 Star</label>
+		<input type="checkbox" name="checkbox-3" id="checkbox-3">
+		<label for="checkbox-4">5 Star</label>
+		<input type="checkbox" name="checkbox-4" id="checkbox-4">
+	</fieldset>
+
+</div>
+
+<!-- Controlgroup -->
+<h1>Controlgroup</h1>
+	<fieldset>
+		<legend>Rental Car</legend>
+		<div class="controlgroup">
+			<select id="car-type">
+				<option>Compact car</option>
+				<option>Midsize car</option>
+				<option>Full size car</option>
+				<option>SUV</option>
+				<option>Luxury</option>
+				<option>Truck</option>
+				<option>Van</option>
+			</select>
+			<label for="transmission-standard">Standard</label>
+			<input type="radio" name="transmission" id="transmission-standard">
+			<label for="transmission-automatic">Automatic</label>
+			<input type="radio" name="transmission" id="transmission-automatic">
+			<label for="insurance">Insurance</label>
+			<input type="checkbox" name="insurance" id="insurance">
+			<label for="horizontal-spinner" class="ui-controlgroup-label"># of cars</label>
+			<input id="horizontal-spinner" class="ui-spinner-input">
+			<button>Book Now!</button>
+		</div>
+	</fieldset>
+
+
+<!-- Tabs -->
+<h2 class="demoHeaders">Tabs</h2>
+<div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+	<ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+		<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-1" aria-labelledby="ui-id-15" aria-selected="false" aria-expanded="false"><a href="#tabs-1" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-15">First</a></li>
+		<li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-2" aria-labelledby="ui-id-16" aria-selected="false" aria-expanded="false"><a href="#tabs-2" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-16">Second</a></li>
+		<li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="tabs-3" aria-labelledby="ui-id-17" aria-selected="true" aria-expanded="true"><a href="#tabs-3" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-17">Third</a></li>
+	</ul>
+	<div id="tabs-1" aria-labelledby="ui-id-15" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+	<div id="tabs-2" aria-labelledby="ui-id-16" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+	<div id="tabs-3" aria-labelledby="ui-id-17" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false" style="display: block;">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+</div>
+
+<!-- ui-dialog -->
+
+<!-- Slider -->
+<h2 class="demoHeaders">Slider</h2>
+<div id="slider" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 20%; width: 47%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 20%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 67%;"></span></div>
+
+<h2 class="demoHeaders">Selectmenu</h2>
+<fieldset>
+		<label for="speed">Select a speed</label>
+		<select name="speed" id="speed">
+			<option>Slower</option>
+			<option>Slow</option>
+			<option selected="selected">Medium</option>
+			<option>Fast</option>
+			<option>Faster</option>
+		</select>
+</fieldset>
+
+
+<!-- Menu -->
+<h2 >Menu</h2>
+<ul id="menu">
+	<li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+	<li><div>Books</div></li>
+	<li><div>Clothing</div></li>
+	<li><div>Electronics</div>
+		<ul>
+			<li class="ui-state-disabled"><div>Home Entertainment</div></li>
+			<li><div>Car Hifi</div></li>
+			<li><div>Utilities</div></li>
+		</ul>
+	</li>
+	<li><div>Movies</div></li>
+	<li><div>Music</div>
+		<ul>
+			<li><div>Rock</div>
+				<ul>
+					<li><div>Alternative</div></li>
+					<li><div>Classic</div></li>
+				</ul>
+			</li>
+			<li><div>Jazz</div>
+				<ul>
+					<li><div>Freejazz</div></li>
+					<li><div>Big Band</div></li>
+					<li><div>Modern</div></li>
+				</ul>
+			</li>
+			<li><div>Pop</div></li>
+		</ul>
+	</li>
+	<li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+<script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script> 
+<script>
+
+$( "#accordion" ).accordion();
+
+var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( "#autocomplete" ).autocomplete({
+	source: availableTags
+});
+
+$( ".widget input[type=submit], .widget a, .widget button" ).button();
+
+$( "#button" ).button();
+
+$( "#controlgroup" ).controlgroup();
+
+
+$( "#tabs" ).tabs();
+
+
+$( "#datepicker" ).datepicker({
+	showOtherMonths: true,
+	selectOtherMonths: true
+});
+
+
+$( "#progressbar" ).progressbar({
+	value: 20
+});
+
+
+$( "#spinner" ).spinner();
+
+
+$( "#menu" ).menu();
+
+
+$( "#tooltip" ).tooltip();
+
+
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
+<script>
+	$( function() {
+		$( "#speed" ).selectmenu();
+	} );
+</script>
+<script>
+	$( function() {
+		$( "#slider" ).slider();
+	} );
+</script>
+<script>
+	$( function() {
+		$( ".widget input[type=radio],.widget input[type=checkbox]" ).checkboxradio();
+	} );
+</script>
+<script>
+	$( function() {
+		$( ".controlgroup" ).controlgroup()
+		$( ".controlgroup-vertical" ).controlgroup({
+			"direction": "vertical"
+		});
+	} );
+</script>
+</body></html>
